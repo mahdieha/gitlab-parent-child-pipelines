@@ -1,0 +1,19 @@
+
+stages:
+- trigger-microservices
+
+trigger microservices 1/2:
+  stage: trigger-microservices
+  trigger:
+    include: module-one/gitlab-module-one.yml
+  only:
+    changes:
+    - module-one/*
+
+trigger microservices 2/2:
+  stage: trigger-microservices
+  trigger:
+    include: module-two/gitlab-module-two.yml
+  only:
+    changes:
+    - module-two/*
