@@ -10,5 +10,4 @@ public class ModuleTwoLauncher {
         SpringApplication.run(ModuleTwoLauncher.class, args);
 
     }
-
 }

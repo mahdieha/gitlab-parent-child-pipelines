@@ -9,5 +9,4 @@ public class ModuleOneLauncher {
         SpringApplication.run(ModuleOneLauncher.class, args);
 
     }
-
 }

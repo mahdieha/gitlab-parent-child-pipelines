@@ -1,3 +1,5 @@
+#child gitlab-ci
+
 image: maven:latest
 
 stages:
