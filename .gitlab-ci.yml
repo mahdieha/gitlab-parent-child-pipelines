@@ -1,10 +1,10 @@
 #parent gitlab-ci
 
 stages:
-- trigger-module
+- trigger-modules
 
 trigger module 1/2:
-  stage: trigger-module
+  stage: trigger-modules
   trigger:
     include: module-one/gitlab-module-one.yml
   only:
@@ -12,7 +12,7 @@ trigger module 1/2:
     - module-one/*
 
 trigger module 2/2:
-  stage: trigger-module
+  stage: trigger-modules
   trigger:
     include: module-two/gitlab-module-two.yml
   only:
