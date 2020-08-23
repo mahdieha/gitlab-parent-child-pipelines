@@ -1,20 +1,20 @@
-#parent gitlab-ci
+#child gitlab-ci
+
+image: maven:latest
 
 stages:
-- trigger-microservices
+- build-package-maven
 
-trigger microservices 1/2:
-  stage: trigger-microservices
-  trigger:
-    include: module-one/gitlab-module-one.yml
+build-package maven 1/2:
+  stage: build-package-maven
+  script:
+  - mvn compile
   only:
-    changes:
-    - module-one/*
+  - master
 
-trigger microservices 2/2:
-  stage: trigger-microservices
-  trigger:
-    include: module-two/gitlab-module-two.yml
+build-package maven 2/2:
+  stage: build-package-maven
+  script:
+  - mvn clean package
   only:
-    changes:
-    - module-two/*
+  - master
